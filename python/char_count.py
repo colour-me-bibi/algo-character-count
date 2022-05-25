@@ -18,6 +18,5 @@ def char_count(string):
     valid_chars = set(ascii_letters)
 
     chars = [char.lower() for char in string if char in valid_chars]
-    counts = sorted(Counter(chars).items(), key=lambda x: x[1], reverse=True)
 
-    return [[k, v] for k, v in counts]
+    return [[k, v] for k, v in Counter(chars).most_common()]
